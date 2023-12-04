@@ -1,0 +1,603 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+:root {
+  --Marine-blue: hsl(213, 96%, 18%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+  --Pastel-blue: hsl(228, 100%, 84%);
+  --Light-blue: hsl(206, 94%, 87%);
+  --Strawberry-red: hsl(354, 84%, 57%);
+
+  --Cool-gray: hsl(231, 11%, 63%);
+  --Light-gray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  background: var(--Magnolia);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+main {
+  background: var(--White);
+  width: 900px;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0px 0px 1px var(--Cool-gray);
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.form-sidebar {
+  background: url(assets/images/bg-sidebar-desktop.svg) no-repeat;
+  width: 274px;
+  height: 568px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Sidebar */
+.steps {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.step-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--White);
+  color: var(--White);
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.steps .step-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.step-title span {
+  color: var(--Cool-gray);
+  font-size: 0.8rem;
+}
+
+.step-title b {
+  color: var(--White);
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  width: 66%;
+  gap: 2rem;
+  padding: 30px 75px 20px 75px;
+}
+
+.step-content .buttons {
+  display: flex;
+  position: absolute;
+  width: 66%;
+  bottom: 0;
+  right: 0;
+}
+
+.header {
+  width: 100%;
+}
+
+.header .title {
+  color: var(--Marine-blue);
+  padding: 10px 0;
+}
+
+.header .about {
+  color: var(--Cool-gray);
+  font-size: 16px;
+}
+
+.buttons {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons button {
+  cursor: pointer;
+}
+
+.next-step {
+  background-color: var(--Marine-blue);
+  padding: 15px 30px;
+  color: var(--Light-gray);
+  border: none;
+  border-radius: 5px;
+}
+
+.go-back {
+  background: transparent;
+  padding: 15px 15px;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  color: var(--Cool-gray);
+}
+
+/* Step one */
+.details-container {
+  padding: 10px 0;
+}
+
+.details-container .label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details-container .label label {
+  color: var(--Marine-blue);
+  font-weight: 500;
+}
+
+.details-container input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: var(--Marine-blue);
+  font-weight: 500;
+  font-size: 1rem;
+  border: 1px solid var(--Light-gray);
+  border-radius: 5px;
+}
+
+.details-container input:focus {
+  outline-color: var(--Purplish-blue);
+}
+
+/* Step two */
+.subscriptions-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.subscriptions-container .subscription {
+  border: 1px solid var(--Light-gray);
+  width: 8.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.subscription .icon {
+  padding: 10px 0;
+  margin-bottom: 2rem;
+}
+
+.subscription-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.subscription .sub-type {
+  color: var(--Marine-blue);
+}
+
+.subscription .sub-price {
+  color: var(--Cool-gray);
+  font-size: 0.9rem;
+}
+
+.switcher {
+  width: 100%;
+  background-color: var(--Magnolia);
+  border-radius: 10px;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.monthly,
+.yearly {
+  color: var(--Cool-gray);
+  font-weight: 500;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--Marine-blue);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--White);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider::before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+.switch-active {
+  color: var(--Marine-blue);
+}
+
+/* Step three */
+.add-ons-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.add-ons-container .add-on {
+  width: 100%;
+  padding: 1.2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border: 1px solid var(--Cool-gray);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.add-on .checkbox input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--Purplish-blue);
+  user-select: none;
+}
+
+.add-on-description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.add-on-description div {
+  color: var(--Marine-blue);
+  font-weight: 700;
+}
+
+.add-on-description span {
+  color: var(--Cool-gray);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.add-on-price {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  color: var(--Purplish-blue);
+  font-weight: 500;
+}
+
+/* Step four */
+.complete-plan-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.complete-plan-card .total {
+  padding: 1rem;
+}
+
+.complete-plan-card .plan-and-add-on {
+  background-color: var(--Magnolia);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.plan-and-add-on hr {
+  margin: 1rem 0;
+  border-color: var(--Cool-gray);
+}
+
+.complete-plan-card .selected-plan {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.complete-plan-card .selected-plan .plan-type-con {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.plan-type-con .plan-type {
+  color: var(--Marine-blue);
+}
+
+.plan-type-con > a {
+  color: var(--Cool-gray);
+  font-size: 0.9rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.selected-plan .plan-price .price {
+  color: var(--Marine-blue);
+}
+
+.complete-plan-card .total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.complete-plan-card .total .total-text {
+  color: var(--Cool-gray);
+}
+
+.complete-plan-card .total .total-price {
+  color: var(--Purplish-blue);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.confirm {
+  background-color: var(--Purplish-blue);
+  padding: 15px 30px;
+  font-weight: 500;
+  color: var(--Light-gray);
+  border: none;
+  border-radius: 5px;
+}
+
+template .selected-add-on {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Step five */
+.step-5-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.step-5-content .thank-you-icon {
+  margin-bottom: 30px;
+}
+
+.step-5-content h1 {
+  color: var(--Marine-blue);
+}
+
+.step-5-content .about {
+  color: var(--Cool-gray);
+}
+
+/* Utility classes */
+.uppercase {
+  text-transform: uppercase;
+}
+
+.error {
+  display: block !important;
+  color: var(--Strawberry-red);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.label > p {
+  display: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+img {
+  max-width: 100%;
+}
+
+.active {
+  background-color: var(--Light-blue) !important;
+  color: black !important;
+}
+
+.selected {
+  border: 1px solid var(--Purplish-blue) !important;
+  background: var(--Magnolia);
+}
+
+/* Responsiveness */
+@media screen and (max-width: 800px) {
+  body {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color: var(--White);
+  }
+
+  main {
+    width: 375px;
+    height: 100vh;
+    padding: 0;
+    background-color: var(--Magnolia);
+  }
+
+  .form-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .form-sidebar {
+    border-radius: 0;
+    background: url(assets/images/bg-sidebar-mobile.svg);
+    position: absolute;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.7rem;
+    height: 200px;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .step-content {
+    display: block;
+    margin-top: 100px;
+    width: 335px;
+    height: fit-content;
+    z-index: 5;
+    background-color: var(--White);
+    border-radius: 10px;
+    padding: 20px;
+    gap: 0.5rem;
+  }
+
+  .step-content .buttons {
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--White);
+  }
+
+  .details-container input {
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  .steps .step-title {
+    display: none;
+  }
+
+  .add-ons-container .add-on {
+    padding: 0.5rem;
+    gap: 0.6rem;
+    border-radius: 5px;
+  }
+
+  .add-on .checkbox input {
+    width: 15px;
+  }
+
+  .add-on-description span {
+    font-size: 0.8rem;
+  }
+
+  .header {
+    margin-bottom: 20px;
+  }
+
+  .subscriptions-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .subscriptions-container .subscription {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+    gap: 1rem;
+  }
+
+  .subscription .icon {
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .switcher {
+    padding: 10px;
+    margin-top: 15px;
+  }
+
+  .step-5-content {
+    padding: 50px 20px;
+    line-height: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .step-5-content .thank-you-icon {
+    margin-bottom: 30px;
+  }
+}
